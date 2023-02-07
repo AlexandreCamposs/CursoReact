@@ -1,16 +1,18 @@
-import './index.css'
-import OutraLista from './components/OutraLista';
+import { useState } from 'react';
+import './index.css';
+import SeuNome from './components/SeuNome';
+import Saudacao from './components/Saudacao';
 
-function AppTest(){
+function AppTest() {
 
-  const meusItens = ['react', 'nodeJs', 'angular']
+  const [nome, setNome] = useState()
 
-  return(
-    <div className='App'>
-      <h1>Renderização de listas</h1>
-      <OutraLista itens={meusItens}/>
-      <OutraLista itens={[]}/>
+  return (
+    <div className="App">
+      <h1>State lift</h1>
+      <SeuNome setNome={setNome}/>
+      <Saudacao nome={nome}/>
     </div>
-  )
+  );
 }
 export default AppTest;
